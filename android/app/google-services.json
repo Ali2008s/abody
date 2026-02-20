@@ -1,0 +1,49 @@
+{
+  "project_info": {
+    "project_number": "100060804942",
+    "firebase_url": "https://upload-92830-default-rtdb.firebaseio.com",
+    "project_id": "upload-92830",
+    "storage_bucket": "upload-92830.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:100060804942:android:8ea0dc2e3cc08bc0a4901f",
+        "android_client_info": {
+          "package_name": "com.Beletram.MCx"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDIwQAokScBCg-uycT5uUaNswM4JmmULEc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:100060804942:android:1277c596c8556c5ea4901f",
+        "android_client_info": {
+          "package_name": "com.example.abodytv"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDIwQAokScBCg-uycT5uUaNswM4JmmULEc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
