@@ -53,6 +53,17 @@ class SecurityService with WidgetsBindingObserver {
 
   void _handleThreat(String title, String message) {
     if (_isBlocked) return;
+
+    // Check if navigator is ready
+    if (navigatorKey.currentState == null) {
+      // If not ready, wait a bit and try again
+      Future.delayed(
+        const Duration(milliseconds: 500),
+        () => _handleThreat(title, message),
+      );
+      return;
+    }
+
     _isBlocked = true;
 
     // Use the navigator key to push the block screen

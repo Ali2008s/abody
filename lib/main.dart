@@ -5,6 +5,7 @@ import 'providers/app_provider.dart';
 import 'screens/splash_screen.dart';
 import 'theme/app_theme.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'firebase_options.dart';
 import 'services/security_service.dart';
 
 final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
@@ -12,15 +13,14 @@ final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  // Firebase initialization (requires google-services.json for Android)
+  // Firebase initialization
   try {
-    await Firebase.initializeApp();
+    await Firebase.initializeApp(
+      options: DefaultFirebaseOptions.currentPlatform,
+    );
   } catch (e) {
     debugPrint('Firebase initialization failed: $e');
   }
-
-  // Initialize Security Service (VPN & Anti-Tamper)
-  await SecurityService().initialize();
 
   runApp(
     MultiProvider(
@@ -28,6 +28,10 @@ void main() async {
       child: const AboudiTVApp(),
     ),
   );
+
+  // Initialize Security Service AFTER runApp so navigatorKey is more likely to be ready
+  // or it will handle re-checking when initialized
+  SecurityService().initialize();
 }
 
 class AboudiTVApp extends StatelessWidget {
