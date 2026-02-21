@@ -50,6 +50,7 @@ dependencies:
   check_vpn_connection: ^0.0.2
   url_launcher: ^6.3.2
   package_info_plus: ^9.0.0
+  video_player: ^2.10.1
 
 
 dev_dependencies:
